@@ -1,0 +1,93 @@
+<project xmlns:ivy="antlib:org.apache.ivy.ant" default="build">
+
+    <!-- Path to required library files. -->
+    <property name="lib.dir" value="lib" />
+
+    <path id="classpath" >
+        <fileset dir="${lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+        <fileset dir="conf"/>
+        <fileset dir="build"/>
+        <fileset dir="/usr/share/java">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+<path id="toolslib">
+ <path location="lib/hibernate-tools-3.2.4.GA.jar" />
+ <path location="lib/hibernate3.jar" />
+ <path location="lib/freemarker.jar" />
+ <path location="${jdbc.driver.jar}" />
+</path>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="build">
+        <mkdir dir="build"/>
+        <javac srcdir="src" destdir="build" includeantruntime="false">
+          <classpath>
+            <path refid="classpath" />
+          </classpath>
+          <!-- <compilerarg value="-Xlint:unchecked" /> -->
+        </javac>
+    </target>
+
+    <target name="jar" depends="build">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/test.jar" basedir="build">
+            <manifest>
+                <attribute name="Main-Class" value="HelloWorld"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="build">
+        <java classname="parse" fork="true">
+        <!-- <java classname="DBTest" fork="true"> -->
+        <classpath path="build"/>
+	<classpath>
+            <path refid="classpath" />
+        </classpath>
+        </java>
+    </target>
+
+<target name="schemaexport" description="Export schema to DDL file" depends="build">
+  <!-- task definition; project.class.path contains all necessary libs -->
+  <taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask">
+    <classpath>
+       <fileset dir="lib">
+          <include name="**/*.jar" />
+       </fileset>
+    </classpath>
+  </taskdef>
+
+  <hibernatetool destdir="export/db"> <!-- check that directory exists -->
+<classpath>
+  <path location="hbm"/>
+       <fileset dir="lib">
+          <include name="**/*.jar" />
+       </fileset>
+ </classpath>
+
+    <!-- <classpath path="build"/> -->
+    <configuration configurationfile="conf/hibernate.cfg.xml" />
+    <!-- <annotationconfiguration configurationfile="conf/hibernate.cfg.xml"/> -->
+<!--
+     <fileset dir="build">
+       <include name="**/*.hbm.xml"/>
+     </fileset>
+    </configuration>
+    <hbm2ddl outputfilename="schemaexport.sql" format="true" export="false" drop="true" />
+    <hbm2java jdk5="true" />
+-->
+    <hbm2hbmxml/>
+  </hibernatetool>
+</target>
+
+<target name="download-jars">
+    <ivy:retrieve/>
+  </target>
+</project>

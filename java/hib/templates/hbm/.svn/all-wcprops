@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/2/trunk/templates/hbm
+END
+persistentclass.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/templates/hbm/persistentclass.hbm.ftl
+END
+meta.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/templates/hbm/meta.hbm.ftl
+END
+pkcolumn.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/templates/hbm/pkcolumn.hbm.ftl
+END
+bag.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/templates/hbm/bag.hbm.ftl
+END
+hibernate-mapping.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/templates/hbm/hibernate-mapping.hbm.ftl
+END
+set.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/templates/hbm/set.hbm.ftl
+END
+id.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/templates/hbm/id.hbm.ftl
+END
+column.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/templates/hbm/column.hbm.ftl
+END
+sql-query.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/templates/hbm/sql-query.hbm.ftl
+END
+component.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/templates/hbm/component.hbm.ftl
+END
+timestamp.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/templates/hbm/timestamp.hbm.ftl
+END
+many-to-one.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/templates/hbm/many-to-one.hbm.ftl
+END
+generalhbm.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2/trunk/templates/hbm/generalhbm.hbm.ftl
+END
+query.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/templates/hbm/query.hbm.ftl
+END
+import.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/templates/hbm/import.hbm.ftl
+END
+list.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/templates/hbm/list.hbm.ftl
+END
+array.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/templates/hbm/array.hbm.ftl
+END
+filter-def.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2/trunk/templates/hbm/filter-def.hbm.ftl
+END
+primitive-array.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/templates/hbm/primitive-array.hbm.ftl
+END
+property.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/templates/hbm/property.hbm.ftl
+END
+version.hbm.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/templates/hbm/version.hbm.ftl
+END

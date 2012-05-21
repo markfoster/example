@@ -1,0 +1,324 @@
+-- MySQL dump 10.13  Distrib 5.5.21, for Linux (x86_64)
+--
+-- Host: 127.0.0.1    Database: cqcpptest
+-- ------------------------------------------------------
+-- Server version		 5.5.21-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `chapter`
+--
+
+DROP TABLE IF EXISTS `chapter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `chapter` (
+  `provider_id` varchar(30) NOT NULL,
+  `location_id` varchar(30) NOT NULL,
+  `chapter_id` varchar(30) NOT NULL,
+  `chapter_score` int(11) DEFAULT NULL,
+  `hashvalue` char(32) DEFAULT NULL,
+  `action` char(1) DEFAULT NULL,
+  PRIMARY KEY (`provider_id`,`location_id`,`chapter_id`),
+  UNIQUE KEY `locid` (`location_id`,`chapter_id`),
+  KEY `provider_id` (`provider_id`,`location_id`,`chapter_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `compliance_condition`
+--
+
+DROP TABLE IF EXISTS `compliance_condition`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `compliance_condition` (
+  `provider_id` varchar(30) NOT NULL,
+  `location_id` varchar(30) NOT NULL,
+  `condition_id` varchar(30) NOT NULL,
+  `regulated_activity_id` varchar(30) NOT NULL,
+  `compliance_condition` longtext,
+  `compliance_reason` longtext,
+  `hashvalue` char(32) DEFAULT NULL,
+  `action` char(1) DEFAULT NULL,
+  PRIMARY KEY (`provider_id`,`location_id`,`condition_id`),
+  UNIQUE KEY `locid` (`location_id`,`regulated_activity_id`,`condition_id`),
+  KEY `provider_id` (`provider_id`,`location_id`,`condition_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `judgement_method`
+--
+
+DROP TABLE IF EXISTS `judgement_method`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `judgement_method` (
+  `provider_id` varchar(30) NOT NULL,
+  `location_id` varchar(30) NOT NULL,
+  `outcome_id` varchar(30) NOT NULL,
+  `method_id` varchar(30) NOT NULL,
+  `method_text` longtext,
+  `hashvalue` char(32) DEFAULT NULL,
+  `action` char(1) DEFAULT NULL,
+  PRIMARY KEY (`provider_id`,`location_id`,`outcome_id`,`method_id`),
+  KEY `provider_id` (`provider_id`,`location_id`,`outcome_id`,`method_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `location`
+--
+
+DROP TABLE IF EXISTS `location`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `location` (
+  `provider_id` varchar(30) NOT NULL,
+  `location_id` varchar(30) NOT NULL,
+  `location_name` longtext,
+  `in_process` varchar(1) DEFAULT NULL,
+  `location_type` varchar(50) DEFAULT NULL,
+  `also_known_as` varchar(100) DEFAULT NULL,
+  `address1` varchar(255) DEFAULT NULL,
+  `address2` varchar(255) DEFAULT NULL,
+  `towncity` varchar(255) DEFAULT NULL,
+  `county` varchar(255) DEFAULT NULL,
+  `postcode` varchar(16) DEFAULT NULL,
+  `latitude` decimal(10,8) DEFAULT '0.00000000',
+  `longitude` decimal(10,8) DEFAULT '0.00000000',
+  `type_info_1` varchar(50) DEFAULT NULL,
+  `type_info_2` varchar(50) DEFAULT NULL,
+  `telephone` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `website` varchar(100) DEFAULT NULL,
+  `fax` varchar(20) DEFAULT NULL,
+  `under_review_text` longtext,
+  `location_user_experience` longtext,
+  `location_license_information` longtext,
+  `location_statement_date` varchar(20) DEFAULT NULL,
+  `location_statement_id` varchar(30) DEFAULT NULL,
+  `hashvalue` char(32) DEFAULT NULL,
+  `action` char(1) DEFAULT NULL,
+  PRIMARY KEY (`provider_id`,`location_id`),
+  KEY `provider_id` (`provider_id`,`location_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `nominated_individual`
+--
+
+DROP TABLE IF EXISTS `nominated_individual`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `nominated_individual` (
+  `provider_id` varchar(30) NOT NULL,
+  `location_id` varchar(30) NOT NULL,
+  `regulated_activity_id` varchar(30) NOT NULL,
+  `nominated_individual` longtext,
+  `hashvalue` char(32) DEFAULT NULL,
+  `action` char(1) DEFAULT NULL,
+  PRIMARY KEY (`provider_id`,`location_id`,`regulated_activity_id`),
+  UNIQUE KEY `locid` (`location_id`,`regulated_activity_id`),
+  KEY `provider_id` (`provider_id`,`location_id`,`regulated_activity_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `outcome`
+--
+
+DROP TABLE IF EXISTS `outcome`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `outcome` (
+  `provider_id` varchar(30) NOT NULL,
+  `location_id` varchar(30) NOT NULL,
+  `outcome_id` varchar(30) NOT NULL,
+  `judgement_id` varchar(30) DEFAULT NULL,
+  `judgement_date` varchar(20) DEFAULT NULL,
+  `judgement_reason` longtext,
+  `judgement_user_experience` longtext,
+  `judgement_other_evidence` longtext,
+  `judgement_score_id` varchar(30) DEFAULT NULL,
+  `outcome_statement_id` varchar(30) DEFAULT NULL,
+  `judgement_summary` longtext,
+  `hashvalue` char(32) NOT NULL,
+  `action` char(1) DEFAULT NULL,
+  PRIMARY KEY (`provider_id`,`location_id`,`outcome_id`),
+  UNIQUE KEY `locid` (`location_id`,`outcome_id`),
+  KEY `provider_id` (`provider_id`,`location_id`,`outcome_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `partner`
+--
+
+DROP TABLE IF EXISTS `partner`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `partner` (
+  `provider_id` varchar(30) NOT NULL,
+  `partner_id` varchar(30) NOT NULL,
+  `partner_name` longtext,
+  `hashvalue` char(32) DEFAULT NULL,
+  `action` char(1) DEFAULT NULL,
+  PRIMARY KEY (`provider_id`,`partner_id`),
+  KEY `provider_id` (`provider_id`,`partner_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `provider`
+--
+
+DROP TABLE IF EXISTS `provider`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `provider` (
+  `provider_id` varchar(30) NOT NULL,
+  `provider_name` longtext,
+  `in_process` varchar(1) DEFAULT NULL,
+  `provider_type` varchar(50) DEFAULT NULL,
+  `also_known_as` varchar(100) DEFAULT NULL,
+  `address1` varchar(255) DEFAULT NULL,
+  `address2` varchar(255) DEFAULT NULL,
+  `towncity` varchar(255) DEFAULT NULL,
+  `county` varchar(255) DEFAULT NULL,
+  `postcode` varchar(16) DEFAULT NULL,
+  `latitude` decimal(10,8) DEFAULT '0.00000000',
+  `longitude` decimal(10,8) DEFAULT '0.00000000',
+  `type_info_1` varchar(50) DEFAULT NULL,
+  `type_info_2` varchar(50) DEFAULT NULL,
+  `under_review_text` longtext,
+  `telephone` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `website` varchar(100) DEFAULT NULL,
+  `fax` varchar(20) DEFAULT NULL,
+  `is_partnership` varchar(1) DEFAULT NULL,
+  `hashvalue` char(32) NOT NULL,
+  `action` char(1) DEFAULT NULL,
+  PRIMARY KEY (`provider_id`),
+  KEY `provider_id` (`provider_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `registered_manager`
+--
+
+DROP TABLE IF EXISTS `registered_manager`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `registered_manager` (
+  `provider_id` varchar(30) NOT NULL,
+  `location_id` varchar(30) NOT NULL,
+  `regulated_activity_id` varchar(30) NOT NULL,
+  `manager_name` longtext,
+  `manager_condition` longtext,
+  `hashvalue` char(32) DEFAULT NULL,
+  `action` char(1) DEFAULT NULL,
+  PRIMARY KEY (`provider_id`,`location_id`,`regulated_activity_id`),
+  UNIQUE KEY `location_id` (`location_id`,`regulated_activity_id`),
+  KEY `provider_id` (`provider_id`,`location_id`,`regulated_activity_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `regulated_activity`
+--
+
+DROP TABLE IF EXISTS `regulated_activity`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `regulated_activity` (
+  `provider_id` varchar(30) NOT NULL,
+  `location_id` varchar(30) NOT NULL,
+  `regulated_activity_id` varchar(30) NOT NULL,
+  `hashvalue` char(32) DEFAULT NULL,
+  `action` char(1) DEFAULT NULL,
+  PRIMARY KEY (`provider_id`,`location_id`,`regulated_activity_id`),
+  KEY `provider_id` (`provider_id`,`location_id`,`regulated_activity_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `routine_condition`
+--
+
+DROP TABLE IF EXISTS `routine_condition`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `routine_condition` (
+  `provider_id` varchar(30) NOT NULL,
+  `location_id` varchar(30) NOT NULL,
+  `condition_id` varchar(30) NOT NULL,
+  `regulated_activity_id` varchar(30) NOT NULL,
+  `routine_condition` longtext,
+  `hashvalue` char(32) DEFAULT NULL,
+  `action` char(1) DEFAULT NULL,
+  PRIMARY KEY (`provider_id`,`location_id`,`condition_id`),
+  UNIQUE KEY `location_id` (`location_id`,`condition_id`,`regulated_activity_id`),
+  KEY `provider_id` (`provider_id`,`location_id`,`condition_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `service_type`
+--
+
+DROP TABLE IF EXISTS `service_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `service_type` (
+  `provider_id` varchar(30) NOT NULL,
+  `location_id` varchar(30) NOT NULL,
+  `service_type_id` varchar(30) NOT NULL,
+  `hashvalue` char(32) DEFAULT NULL,
+  PRIMARY KEY (`provider_id`,`location_id`,`service_type_id`),
+  UNIQUE KEY `location_id` (`service_type_id`,`location_id`),
+  KEY `provider_id` (`provider_id`,`location_id`,`service_type_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `service_user_band`
+--
+
+DROP TABLE IF EXISTS `service_user_band`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `service_user_band` (
+  `provider_id` varchar(30) NOT NULL,
+  `location_id` varchar(30) NOT NULL,
+  `service_user_band_id` varchar(30) NOT NULL,
+  `hashvalue` char(32) DEFAULT NULL,
+  PRIMARY KEY (`provider_id`,`location_id`,`service_user_band_id`),
+  UNIQUE KEY `location_id` (`location_id`,`service_user_band_id`),
+  KEY `provider_id` (`provider_id`,`location_id`,`service_user_band_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2012-05-08  9:02:53

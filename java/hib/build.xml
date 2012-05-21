@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<! 
+<!  Buildfile for reverse-engineering a JDBC-accessible database 
+<!  into Java data-access-objects + hibernate mapping files.
+<!
+<!  This distribution is licensed under the LGPL, see LICENSE.txt.
+<!  This software is provided as-is, there is no warranty, express 
+<!  or implied, and your use of it is at your own risk.
+<!
+<!  Author: Matt Harrison (glycoslave at gmail dot com)
+<!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<project name="ant-hibernate-reveng-top" default="help" xmlns:ac="antlib:net.sf.antcontrib">
+    
+   <!--===================== PROPERTIES ==========================-->
+
+    <!-- 
+    <! Base directory where to place generated java src/DDL/etc from hibernate.
+    <! Note that existing files will be overwritten files. -->
+    <property name="output.dir" value="output" /> 
+
+    <!-- Where the various config files are found -->
+    <property name="config.dir" value="conf"/> 
+    
+    <!-- Directory to go looking for freemarker-based code templates. 
+    <! Set this to a empty directory to use Hibernate's default templates. 
+    <! Note also that hibernate applies JTidy to generated XML config files, 
+    <! meaning that your formatting will be lost. -->
+    <property name="templates.dir" value="templates"/> 
+    
+    <!-- Path to required library files. -->
+    <property name="lib.dir" value="lib" />
+    
+    <!-- Java package prefix for generated DAOs. Schema names will be appended
+    <! to this prefix to derive the final package name. -->
+    <property name="package.name" value="org.cqc"/> 
+    
+    
+    <!--======================== PATHS ===========================-->
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <!  PATH: classpath
+    -->
+    <path id="classpath" >
+        <fileset dir="${lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+        <fileset dir="/usr/share/java">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <!  TASK: hibernatetool    
+    <!  Task definition for the Hibernate tool, which is used to generate all the 
+    <!  various HBM files and eventually the Java.
+    -->
+    <taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask">
+        <classpath>
+            <path refid="classpath" />
+            <pathelement location="${config.dir}" />
+        </classpath>      
+    </taskdef>
+    
+    
+    <!--======================= TARGETS  =========================-->
+    
+    <target name="help" description="Prints basic usage info">
+        <echo></echo>
+        <echo>This buildfile aids in the generation of Java data-access objects</echo>
+        <echo>and associated hibernate mapping files from an existing JDBC-compatible</echo>
+        <echo>database connection. It can optionally also generate DB DDL/creation SQL</echo>
+        <echo>and hibernate-oriented database documentation. See 'ant -p' for more info.</echo>
+        <echo></echo>
+    </target> 
+    
+    
+    <!--=============================================================
+    <!  TARGET: reveng
+    -->
+    <target name="reveng" 
+        description="Reverse engineer hbm.xml mappings, java DAOs, DB DDL, and DB docs from a JDBC connection"
+        depends="reveng-hbm, reveng-java, generate-cfg-xml, reveng-ddl, reveng-db-docs" />
+
+    
+    <!--=============================================================
+    <!  TARGET: reveng-db-docs
+    -->
+    <target name="reveng-db-docs"
+            description="Reverse engineer database documentation for all tables from a JDBC connection" >
+        <mkdir dir="${output.dir}" />
+        <hibernatetool destdir="${output.dir}">
+            <jdbcconfiguration
+                packagename="${ecdb.package.basename}.dataaccess"
+                configurationfile="${config.dir}/hibernate.cfg.xml"
+                revengfile="${config.dir}/hibernate.reveng.xml"
+            />
+            <hbm2doc/>
+        </hibernatetool>
+        
+        <echo>See ${output.dir} for generated database documentation</echo>
+    </target>
+
+    
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <!  TARGET: generate-cfg-xml
+    <! 
+    <!  Generates the hibernate.cfg.xml file for a set of hbm.xml files stored 
+    <!  within the source directory. By convention, each mapped class will have
+    <!  its own hbm.xml file, and this task merges them all together at build time.
+    -->
+    <target name="generate-cfg-xml" 
+        description="Creates a hibernate.cfg.xml file from a set of hbm.xml files in the output directory">
+        <echo>Using hbm.xml files from directory ${output.dir}:</echo>
+        <hibernatetool>
+            <configuration configurationfile="${config.dir}/hibernate.cfg.xml" >
+                <fileset dir="${output.dir}">
+                    <include name="**/*.hbm.xml"/>
+                </fileset>
+            </configuration>
+            <hbm2cfgxml destdir="${output.dir}"/>
+        </hibernatetool>        
+    </target>
+    
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <!  TARGET: reveng-ddl
+    <! 
+    <!  Uses an existing JDBC-capable database to generate its DDL (data
+    <!  definition language; it's creation SQL).
+    -->
+    <target name="reveng-ddl" description="Reverse-engineers DDL from a JDBC connection" >
+        <hibernatetool destdir="${output.dir}">
+            <jdbcconfiguration
+                packagename=""
+                configurationfile="${config.dir}/hibernate.cfg.xml"
+                revengfile="${config.dir}/hibernate.reveng.xml"
+            />
+            <hbm2ddl export="false" 
+                     outputfilename="sql.ddl" 
+                     create="true"
+                     drop="true"
+                     format="true"
+                     />
+        </hibernatetool>
+        <echo>OK, generated DDL SQL can be found in ${output.dir}</echo>
+    </target>
+
+    
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <!  TARGET: reveng-java
+    <! 
+    <!  Uses generated HBM files to generate the Java data access objects 
+    <!  (DAOs).
+    -->
+    <target 
+        name="reveng-java" depends="" 
+        description="Generates java data access objects from existing .hbm.xml files" 
+    >
+        <echo>Attempting to generate java source from .hbm.xml files in ${output.dir}:</echo>  
+        <mkdir dir="${output.dir}"/>
+        <delete>
+            <fileset dir="${output.dir}">
+                <include name="**/*.java"/>
+            </fileset>
+        </delete>
+        <hibernatetool destdir="${output.dir}"
+                       templatepath="${templates.dir}"  >
+            <configuration>
+                <fileset dir="${output.dir}">
+                    <include name="**/*.hbm.xml"/>
+                </fileset>
+            </configuration>
+            
+            <hbm2java jdk5="true" />
+        </hibernatetool>
+        <echo>OK, generated java files can be found in ${output.dir}     </echo>
+        <echo>Please review them before hand copying to their final destination.</echo>
+        <echo>If this build target died with error, make sure you have first    </echo>
+        <echo>generated the hbm.xml files with 'ant reveng-hbm'.      </echo>
+    </target>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <!  TARGET: reveng-hbm
+    <! 
+    <!  Generates HBM files from a JDBC connection. This uses a predefined 
+    <!  reverse engineering file. A controlling hibernate.cfg.xml is created 
+    <!  in the output.dir directory which is read  in at runtime by Hibernate 
+    <!  to learn about mappings.
+    -->
+    <target name="reveng-hbm" depends="" 
+            description="Reverse-engineers hibernate hbm.xml files from a JDBC connection" >
+        <echo>Attempting to .hbm.xml files from configured DB connection:</echo>      
+		<mkdir dir="${output.dir}"/>
+        <delete>
+            <fileset dir="${output.dir}">
+                <include name="**/*.hbm.xml"/>
+            </fileset>
+        </delete>
+        <hibernatetool destdir="${output.dir}" 
+                       templatepath="${templates.dir}" >
+            <jdbcconfiguration
+                packagename="${package.name}"
+                configurationfile="${config.dir}/hibernate.cfg.xml"
+                revengfile="${config.dir}/hibernate.reveng.xml"
+            >
+            </jdbcconfiguration>
+            
+            <hbm2hbmxml />
+            
+            <hbm2cfgxml />
+            
+        </hibernatetool>
+        <echo>Generated *.hbm.xml files can be found in ${output.dir}/</echo>
+        <echo>It is suggested to *only* copy those files or packages that you</echo>
+        <echo>need to the ${output.dir}/ directory and modify as required.</echo>
+        <echo>Many-to-many relations in particular are not recommended and   </echo>
+        <echo>will likely require modification by hand.</echo>
+    </target>
+
+</project>

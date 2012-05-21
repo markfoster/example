@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.032" errors="0" skipped="0" tests="1" name="com.mkyong.common.AppTest">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="20.0-b11"/>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
+    <property name="java.vendor.url" value="http://java.sun.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/appadmin/java/HibernateExample"/>
+    <property name="java.runtime.version" value="1.6.0_22-b22"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="basedir" value="/home/appadmin/java/HibernateExample"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="surefire.real.class.path" value="/tmp/surefirebooter8797786189839009050.jar"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64/server:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="surefire.test.class.path" value="/home/appadmin/java/HibernateExample/target/classes:/home/appadmin/java/HibernateExample/target/test-classes:/root/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/root/.m2/repository/antlr/antlr/2.7.6/antlr-2.7.6.jar:/root/.m2/repository/cglib/cglib/2.2/cglib-2.2.jar:/root/.m2/repository/org/jboss/logging/jboss-logging/3.1.0.CR2/jboss-logging-3.1.0.CR2.jar:/root/.m2/repository/mysql/mysql-connector-java/5.1.9/mysql-connector-java-5.1.9.jar:/root/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar:/root/.m2/repository/org/hibernate/ejb3-persistence/1.0.2.GA/ejb3-persistence-1.0.2.GA.jar:/root/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/root/.m2/repository/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar:/root/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/root/.m2/repository/org/hibernate/hibernate-commons-annotations/3.3.0.ga/hibernate-commons-annotations-3.3.0.ga.jar:/root/.m2/repository/org/hibernate/hibernate-entitymanager/3.4.0.GA/hibernate-entitymanager-3.4.0.GA.jar:/root/.m2/repository/org/hibernate/hibernate/3.2.1.ga/hibernate-3.2.1.ga.jar:/root/.m2/repository/net/sf/ehcache/ehcache/1.2.3/ehcache-1.2.3.jar:/root/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/root/.m2/repository/javassist/javassist/3.4.GA/javassist-3.4.GA.jar:/root/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/root/.m2/repository/org/hibernate/hibernate-core/3.3.2.GA/hibernate-core-3.3.2.GA.jar:/root/.m2/repository/asm/asm-attrs/1.5.3/asm-attrs-1.5.3.jar:/root/.m2/repository/org/hibernate/hibernate-annotations/3.4.0.GA/hibernate-annotations-3.4.0.GA.jar:/root/.m2/repository/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar:/root/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar:/root/.m2/repository/asm/asm/3.1/asm-3.1.jar:"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="2.6.18-238.1.1.el5"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/home/appadmin/java/HibernateExample/target/classes:/home/appadmin/java/HibernateExample/target/test-classes:/root/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar:/root/.m2/repository/antlr/antlr/2.7.6/antlr-2.7.6.jar:/root/.m2/repository/cglib/cglib/2.2/cglib-2.2.jar:/root/.m2/repository/org/jboss/logging/jboss-logging/3.1.0.CR2/jboss-logging-3.1.0.CR2.jar:/root/.m2/repository/mysql/mysql-connector-java/5.1.9/mysql-connector-java-5.1.9.jar:/root/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar:/root/.m2/repository/org/hibernate/ejb3-persistence/1.0.2.GA/ejb3-persistence-1.0.2.GA.jar:/root/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/root/.m2/repository/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar:/root/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/root/.m2/repository/org/hibernate/hibernate-commons-annotations/3.3.0.ga/hibernate-commons-annotations-3.3.0.ga.jar:/root/.m2/repository/org/hibernate/hibernate-entitymanager/3.4.0.GA/hibernate-entitymanager-3.4.0.GA.jar:/root/.m2/repository/org/hibernate/hibernate/3.2.1.ga/hibernate-3.2.1.ga.jar:/root/.m2/repository/net/sf/ehcache/ehcache/1.2.3/ehcache-1.2.3.jar:/root/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/root/.m2/repository/javassist/javassist/3.4.GA/javassist-3.4.GA.jar:/root/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/root/.m2/repository/org/hibernate/hibernate-core/3.3.2.GA/hibernate-core-3.3.2.GA.jar:/root/.m2/repository/asm/asm-attrs/1.5.3/asm-attrs-1.5.3.jar:/root/.m2/repository/org/hibernate/hibernate-annotations/3.4.0.GA/hibernate-annotations-3.4.0.GA.jar:/root/.m2/repository/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar:/root/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar:/root/.m2/repository/asm/asm/3.1/asm-3.1.jar:"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre"/>
+    <property name="sun.java.command" value="/tmp/surefirebooter8797786189839009050.jar /tmp/surefire6670306192294793109tmp /tmp/surefire8271660749056718623tmp"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.language" value="en"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.6.0_22"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/resources.jar:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/rt.jar:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/jsse.jar:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/jce.jar:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/charsets.jar:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/netx.jar:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/plugin.jar:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/rhino.jar:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/modules/jdk.boot.jar:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/classes"/>
+    <property name="java.vendor" value="Sun Microsystems Inc."/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase time="0.002" classname="com.mkyong.common.AppTest" name="testApp"/>
+</testsuite>

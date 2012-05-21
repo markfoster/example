@@ -1,0 +1,73 @@
+==============================================================================
+
+See below for installation instructions.  Or, let us install FileChucker for
+you:
+
+	www.encodable.com/buy/ENCINSFC2
+
+==============================================================================
+
+Quick Instructions for Most Servers (Apache on Linux, Mac OS X, BSD):
+
+Upload the contents of the www.example.com folder onto your website.  Then
+visit the following address, replacing example.com with your own domain name:
+
+	www.example.com/cgi-bin/filechucker.cgi
+
+If that works, then FileChucker is installed properly, and you should now
+read the FAQ: www.encodable.com/filechucker/faq
+
+If nothing works, read the full instructions:
+
+	www.encodable.com/filechucker/#insapache
+
+==============================================================================
+
+Quick Instructions for Apache-on-Windows Servers:
+
+If your server doesn't already have Perl installed, download and install the
+free ActivePerl from www.activestate.com.  You may need to reboot after
+installing it.  Open a command prompt and type "perl -v" and if you get some
+output about Perl and its version info, you should be all set.
+
+If you had to install Perl, you may also want to install the DBD::MySQL Perl
+module (if you want to use any of FileChucker's optional database-based
+features), and the MIME::Lite module (if you want to use any of the email
+features), by opening the Run dialog or a command prompt and then typing
+"ppm install DBD-mysql" (or "ppm install MIME-Lite").  Or you can run just
+the ppm command by itself to use the graphical installer. 
+
+Now follow the regular Apache instructions above.
+
+==============================================================================
+
+Quick Instructions for IIS-on-Windows Servers:
+
+If your server doesn't already have Perl installed, download and install the
+free ActivePerl from www.activestate.com.  You may need to reboot after
+installing it.  Open a command prompt and type "perl -v" and if you get some
+output about Perl and its version info, you should be all set.
+
+If you had to install Perl, you may also want to install the DBD::MySQL Perl
+module (if you want to use any of FileChucker's optional database-based
+features), and the MIME::Lite module (if you want to use any of the email
+features), by opening the Run dialog or a command prompt and then typing
+"ppm install DBD-mysql" (or "ppm install MIME-Lite").  Or you can run just
+the ppm command by itself to use the graphical installer. 
+
+Open the www.example.com folder and move the contents of the cgi-bin folder
+into the upload folder.  Then delete the cgi-bin folder.  Upload the "upload"
+folder onto your website, then visit the following address, replacing
+example.com with your own domain name:
+
+	www.example.com/upload/filechucker.cgi
+
+If that works, then FileChucker is installed properly, and you should now
+read the FAQ: www.encodable.com/filechucker/faq
+
+If nothing works, read the full instructions:
+
+	www.encodable.com/filechucker/#insiis
+
+==============================================================================
+

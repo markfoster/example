@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/2/trunk/templates/pojo
+END
+Ejb3TypeDeclaration.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2/trunk/templates/pojo/Ejb3TypeDeclaration.ftl
+END
+PojoExtraClassCode.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/templates/pojo/PojoExtraClassCode.ftl
+END
+PojoFields.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/templates/pojo/PojoFields.ftl
+END
+PojoTypeDeclaration.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2/trunk/templates/pojo/PojoTypeDeclaration.ftl
+END
+GetPropertyAnnotation.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2/trunk/templates/pojo/GetPropertyAnnotation.ftl
+END
+test.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/templates/pojo/test.ftl
+END
+PojoConstructors.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/templates/pojo/PojoConstructors.ftl
+END
+PojoToString.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/templates/pojo/PojoToString.ftl
+END
+PojoEqualsHashcode.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/templates/pojo/PojoEqualsHashcode.ftl
+END
+PojoPropertyAccessors.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2/trunk/templates/pojo/PojoPropertyAccessors.ftl
+END
+PojoInterfacePropertyAccessors.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2/trunk/templates/pojo/PojoInterfacePropertyAccessors.ftl
+END
+Ejb3PropertyGetAnnotation.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2/trunk/templates/pojo/Ejb3PropertyGetAnnotation.ftl
+END
+Pojo.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/templates/pojo/Pojo.ftl
+END

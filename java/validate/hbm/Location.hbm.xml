@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+<!  Entity: 
+<!                      org.cqc.Location
+<! 
+<!  Author: matt h
+<!  Generated: 30-Apr-2012 13:37:57 
+<!  Hibernate version: 3.2.2.GA 
+<!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<hibernate-mapping>
+    <class name="org.cqc.Location" table="location" catalog="hibtest">
+        <composite-id name="id" class="org.cqc.LocationId">
+            <key-property name="providerId" type="string">
+                <column name="provider_id" length="30" />
+            </key-property>
+            <key-property name="locationId" type="string">
+                <column name="location_id" length="30" />
+            </key-property>
+        </composite-id>
+        <property name="locationName" type="string">
+            <column name="location_name" />
+        </property>
+        <property name="inProcess" type="string">
+            <column name="in_process" length="1" />
+        </property>
+        <property name="locationType" type="string">
+            <column name="location_type" length="50" />
+        </property>
+        <property name="alsoKnownAs" type="string">
+            <column name="also_known_as" length="100" />
+        </property>
+        <property name="address1" type="string">
+            <column name="address1" />
+        </property>
+        <property name="address2" type="string">
+            <column name="address2" />
+        </property>
+        <property name="towncity" type="string">
+            <column name="towncity" />
+        </property>
+        <property name="county" type="string">
+            <column name="county" />
+        </property>
+        <property name="postcode" type="string">
+            <column name="postcode" length="16" />
+        </property>
+        <property name="latitude" type="big_decimal">
+            <column name="latitude" precision="10" scale="8" />
+        </property>
+        <property name="longitude" type="big_decimal">
+            <column name="longitude" precision="10" scale="8" />
+        </property>
+        <property name="typeInfo1" type="string">
+            <column name="type_info_1" length="50" />
+        </property>
+        <property name="typeInfo2" type="string">
+            <column name="type_info_2" length="50" />
+        </property>
+        <property name="telephone" type="string">
+            <column name="telephone" length="20" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+        <property name="website" type="string">
+            <column name="website" length="100" />
+        </property>
+        <property name="fax" type="string">
+            <column name="fax" length="20" />
+        </property>
+        <property name="underReviewText" type="string">
+            <column name="under_review_text" />
+        </property>
+        <property name="locationUserExperience" type="string">
+            <column name="location_user_experience" />
+        </property>
+        <property name="locationLicenseInformation" type="string">
+            <column name="location_license_information" />
+        </property>
+        <property name="locationStatementDate" type="string">
+            <column name="location_statement_date" length="20" />
+        </property>
+        <property name="locationStatementId" type="string">
+            <column name="location_statement_id" length="30" />
+        </property>
+        <property name="hashvalue" type="string">
+            <column name="hashvalue" length="32" />
+        </property>
+        <property name="action" type="java.lang.Character">
+            <column name="action" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<List_Of_Provider inserts="1" updates="1" deletes="1">
+   <Provider>
+     <providerId>1-153033151</providerId>
+     <providerName>Dr. Shailesh Gohil</providerName>
+     <providerType>PROVIDER</providerType>
+     <alsoKnownAs>S D Gohil</alsoKnownAs>
+     <address1>8 Lansdown Road</address1>
+     <towncity>Sidcup</towncity>
+     <county>Kent</county>
+     <postcode>DA14 4EG</postcode>
+<!--
+     <latitude>0E-8</latitude>
+     <longitude>0E-8</longitude>
+-->
+     <typeInfo1>Primary Dental Care</typeInfo1>
+     <typeInfo2>Provider</typeInfo2>
+     <telephone>02083006200</telephone>
+     <isPartnership>N</isPartnership>
+     <Action_Code>I</Action_Code>
+   </Provider>
+</List_Of_Provider>

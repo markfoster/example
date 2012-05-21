@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<! 
+<!              Hibernate configuration file
+<! 
+<!  make sure to edit the DB connection params, namely the values of:
+<! 
+<!      DATABASE_NAME   
+<!      DATABASE_USERNAME   
+<!      DATABASE_USERNAME_PASSWORD   
+<! 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<hibernate-configuration>
+
+    <session-factory>
+        
+        <!-- Database authorisation/connection settings -->
+        <property name="connection.url">jdbc:postgresql://localhost/DATABASE_NAME</property>
+        <property name="connection.username">DATABASE_USERNAME</property>
+        <property name="connection.password">DATABASE_USERNAME_PASSWORD</property>
+
+        <!-- Database type -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+    </session-factory>
+</hibernate-configuration>
+

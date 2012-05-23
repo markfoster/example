@@ -45,5 +45,13 @@
 
         <dependency org="org.freemarker" name="freemarker"
            rev="2.3.19"/>
+
+        <!-- Spring framework -->
+        <dependency org="org.springframework" name="spring"
+           rev="2.5.6"/>
+
+        <dependency org="org.apache.xmlbeans" name="xmlbeans"
+           rev="2.4.0"/>
+<dependency org="jtidy" name="jtidy" rev="4aug2000r7-dev"/>
     </dependencies>
 </ivy-module>

@@ -10,18 +10,21 @@ import javax.xml.validation.Validator;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
-import org.w3c.dom.Document;
-import org.w3c.dom.*;
-import org.w3c.dom.NodeList;
+//import org.w3c.dom.Document;
+//import org.w3c.dom.*;
+//import org.w3c.dom.NodeList;
+//import org.xml.sax.InputSource;
 import org.apache.log4j.Logger;
-import org.xml.sax.InputSource;
 
 import java.io.*;
 import java.io.StringReader;
 import java.util.*;
 
+import org.dom4j.XPath;
+import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
+import org.dom4j.*;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 import org.dom4j.io.OutputFormat;
@@ -38,22 +41,23 @@ public class parse {
 
         public static void main(String[] arg) throws IOException {
 
-                HibernateUtil.buildSessionFactory();
-
                 System.out.println("Hello");
                 parse p = new parse();
 
-                String xml = fileToString("hbm/Geocode.hbm.xml");
-                if (p.checkXML(xml) != null) System.out.println("XML is well formed");
+                //String xml = fileToString("hbm/Geocode.hbm.xml");
+                //if (p.checkXML(xml) != null) System.out.println("XML is well formed");
 
-                xml = fileToString("xml/audit.xml");
-                String xsd = fileToString("xsd/audit.xsd");
+                String xml = fileToString("xml/audit.xml");
+                String xsd = fileToString("xsd/PP_AUDIT_XML.xsd");
 		String result = "";
+                try {
                 if (p.checkXML(xml) != null) System.out.println("XML is well formed");
-                result = p.checkXSD(xsd);
-                System.out.println(result);
- 		result = p.validateXML(xml, xsd);
-                System.out.println(result);
+                    	p.checkXSD(xsd);
+ 			p.validateXML(xml, xsd);
+                } catch (Exception ex) {
+                	System.out.println("Audit XML issues: " + ex.getMessage());
+			System.exit(0);
+		}
 
                 Map<String, Document> docs = new HashMap();
 
@@ -63,14 +67,24 @@ public class parse {
                 Iterator i = keys.iterator();
                 while (i.hasNext()) {
                        String key = (String)i.next();
+                       if (key != "Provider") continue;
 		       String xmlFile = "xml/" + key + ".xml";
-		       String xsdFile = "xsd/" + key + ".xsd";
-		       System.out.println("Looking to load " + xmlFile);
+		       String xsdFile = "xsd/PP_" + key.toUpperCase() + "_XML.xsd";
+		       System.out.println("Load and Validate (" + xmlFile + ", " + xsdFile + ")");
 	               xml = fileToString(xmlFile);	
 	               xsd = fileToString(xsdFile);	
-                       Document doc = p.checkXML(xml);
-                       docs.put(key, doc);
-                       p.validateXML(xml, xsd);
+                       Document doc = null;
+                       try {
+                       	   doc = p.checkXML(xml);
+                           docs.put(key, doc);
+                           p.checkXSD(xsd);
+                           p.validateXML(xml, xsd);
+			   p.validateActions(xml, (Map)audits.get(key));
+			   //p.checkData(doc, (Map)audits.get(key));
+		       } catch (Exception ex) {
+			   System.out.println("Invalid XML: " + ex.getMessage());
+                           System.exit(0);
+		       }
                        //System.out.print(key + ": ");
                        //System.out.println(smap.get(key));
                 }
@@ -78,9 +92,16 @@ public class parse {
 		int updates = Integer.parseInt("1");
                 System.out.println("Updates = " + updates);
 
+                HibernateUtil.buildSessionFactory();
 		//p.saveProviders();
 		//p.saveOutcomes();
                 //p.readGeocodes();
+        }
+
+	public void checkData(Document doc, Map checks) {
+		logger.info("In checkData()");
+		System.out.println(doc);
+		System.out.println(checks);
         }
 
         public void readGeocodes() {
@@ -140,19 +161,38 @@ public class parse {
 			session.close();
 		}
 	}
+
+   	public boolean validateActions(String xml, Map actions) {
+		System.out.println("Passed map = " + actions);
+                Document doc = null;
+                try {
+			SAXReader sax = new SAXReader();
+			doc = sax.read(new StringReader(xml));
+			List list = doc.selectNodes("//Provider/Action_Code");
+			System.out.println(list);
+			for (Iterator iter = list.iterator(); iter.hasNext(); ) {
+            	             Element e = (Element)iter.next();
+            		     String action = e.getText();
+                             logger.info("action  = " + action);
+        		}
+                        return false;
+                } catch (Exception e) {
+                        logger.error("Error", e);
+                        return false;
+                }
+        }
  
         public Map parse(String xml) {
  		Document doc = null;
 		try {
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder builder = factory.newDocumentBuilder();
-			doc = builder.parse(new InputSource(new StringReader(xml)));
+			SAXReader sax = new SAXReader();
+			doc = sax.read(new StringReader(xml));
                 } catch (Exception e) {
                         logger.error("Error", e);
                         return null;
                 }
 		TreeMap<String, Map<String, String>> smap = new TreeMap<String, Map<String, String>>();
- 		visit(smap, doc, 0);
+ 		visit(smap, doc.getRootElement(), 0);
 /**
                 Set keys = smap.keySet(); 
                 Iterator i = keys.iterator();
@@ -165,58 +205,58 @@ public class parse {
  		return smap; 
 	}
 
- 	public void visit(Map map, Node n, int level) {
-                NodeList nl = n.getChildNodes();
-                for(int i=0,count=nl.getLength(); i<count; i++) {
-                    if (nl.item(i).getNodeType() == Node.ELEMENT_NODE) {
-			if (nl.item(i).hasAttributes()) {
-                	    getAttributes(map, nl.item(i));
-            		}
-                        visit(map, nl.item(i), level+1);
-                    }
-                }
+ 	public void visit(Map map, Element e, int level) {
+		// iterate through child elements of root
+        	for (Iterator i = e.elementIterator(); i.hasNext(); ) {
+                     Element e1 = (Element)i.next();
+		     if (e1.attributeCount() > 0)
+                         getAttributes(map, e1);
+                     visit(map, e1, level+1);
+        	}
 	}
 
-    	private void getAttributes(Map map, Node node) {
-        	NamedNodeMap attrs = node.getAttributes();
-        	//System.out.print(node.getNodeName());
+    	private void getAttributes(Map map, Element e) {
                 Map<String, String> attrMap = new HashMap<String, String>();
-        	for (int i = 0; i < attrs.getLength(); i++) {
-                     Attr attribute = (Attr)attrs.item(i);
-            	     //System.out.print(" : " + attribute.getName() + "=" + attribute.getValue());
+		for (Iterator i = e.attributeIterator(); i.hasNext(); ) {
+                     Attribute attribute = (Attribute)i.next();
+            	     System.out.println(e.getName() + " : " + attribute.getName() + "=" + attribute.getValue());
                      attrMap.put((String)attribute.getName(), (String)attribute.getValue());
         	}
-                map.put(node.getNodeName(), attrMap);
+                map.put(e.getName(), attrMap);
     	}
 
-	public Document checkXML(String xml) {
+	public Document checkXML(String xml) throws Exception {
 		logger.info("in checkXML()");
                 Document doc = null;
+/***
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			doc = builder.parse(new InputSource(new StringReader(xml)));
+			logger.info(" -> doc = " + doc);
 		} catch (Exception e) {
 			logger.error("Error", e);
-			return null;
+                        throw new Exception(e.getMessage());
 		}
 		logger.info("The XML is Well Formed");
                 return doc;
+***/
+                return doc;
 	}
 
-	public String checkXSD(String xsd) {
+	public String checkXSD(String xsd) throws Exception {
 		logger.info("in checkXSD()");
 		try {
 			SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 			factory.newSchema(new StreamSource(new StringReader(xsd)));
 		} catch (Exception e) {
 			logger.error("Error", e);
-			return e.getMessage();
+			throw new Exception(e.getMessage());
 		}
-		return "The XSD is Valid";
+		return null;
 	}
 
-        public String validateXML(String xml, String xsd) {
+        public String validateXML(String xml, String xsd) throws Exception {
  		logger.info("in validateXML()");
 		MyErrorHandler errorHandler = new MyErrorHandler();
 		try {
@@ -226,14 +266,13 @@ public class parse {
 			validator.setErrorHandler(errorHandler);
 			validator.validate(new StreamSource(new StringReader(xml)));
 		} catch (Exception e) {
-			logger.error("Error", e);
-			return e.getMessage();
+			logger.info("Error", e);
+			throw new Exception(e.getMessage());
 		}
-
 		String getResult = errorHandler.getResult();
-		if (getResult.isEmpty())
-			return "The XML is Well Formed and VALID";
-		return getResult;
+		if (!getResult.isEmpty())
+                    throw new Exception(getResult);
+		return "The XML is Well Formed and VALID";
         }
 
 	static class MyErrorHandler implements ErrorHandler {
@@ -260,7 +299,7 @@ public class parse {
      * @return  The file as String encoded in the platform
      * default encoding
      */
-private static String fileToString( String file ) throws IOException {
+	private static String fileToString( String file ) throws IOException {
     BufferedReader reader = new BufferedReader( new FileReader (file));
     String line  = null;
     StringBuilder stringBuilder = new StringBuilder();
@@ -270,6 +309,6 @@ private static String fileToString( String file ) throws IOException {
         stringBuilder.append( ls );
     }
     return stringBuilder.toString();
- }
+ 	}
 
 }

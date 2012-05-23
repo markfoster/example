@@ -1,0 +1,834 @@
+2012-05-23 11:55:51,295 - Log4JLogChute initialized using file 'velocity.log'
+2012-05-23 11:55:51,296 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2012-05-23 11:55:51,296 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2012-05-23 11:55:51,296 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2012-05-23 11:55:51,296 - Couldn't find class org.apache.velocity.runtime.log.AvalonLogChute or necessary supporting classes in classpath.
+java.lang.NoClassDefFoundError: org/apache/log/format/Formatter
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:247)
+	at org.apache.velocity.util.ClassUtils.getClass(ClassUtils.java:63)
+	at org.apache.velocity.util.ClassUtils.getNewInstance(ClassUtils.java:95)
+	at org.apache.velocity.runtime.log.LogManager.createLogChute(LogManager.java:147)
+	at org.apache.velocity.runtime.log.LogManager.updateLog(LogManager.java:208)
+	at org.apache.velocity.runtime.RuntimeInstance.initializeLog(RuntimeInstance.java:728)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:240)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:534)
+	at org.apache.velocity.runtime.RuntimeSingleton.init(RuntimeSingleton.java:227)
+	at org.apache.velocity.app.Velocity.init(Velocity.java:111)
+	at com.felees.hbnpojogen.Config.parseConfig(Config.java:71)
+	at com.felees.hbnpojogen.HbnPojoGen.run(HbnPojoGen.java:417)
+	at com.felees.hbnpojogen.HbnPojoGen.main(HbnPojoGen.java:470)
+Caused by: java.lang.ClassNotFoundException: org.apache.log.format.Formatter
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 14 more
+2012-05-23 11:55:51,297 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 11:55:51,297 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 11:55:51,299 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2012-05-23 11:55:51,301 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 11:55:51,303 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2012-05-23 11:55:51,304 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2012-05-23 11:55:51,305 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2012-05-23 11:55:51,306 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2012-05-23 11:55:51,307 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2012-05-23 11:55:51,308 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2012-05-23 11:55:51,332 - Created '20' parsers.
+2012-05-23 11:55:51,337 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2012-05-23 11:55:51,337 - Velocimacro : Default library not found.
+2012-05-23 11:55:51,338 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2012-05-23 11:55:51,338 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2012-05-23 11:55:51,338 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2012-05-23 11:55:51,338 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2012-05-23 11:55:51,350 - Velocimacro : added #doCalcFullType(  ) : source = templates/class.vm
+2012-05-23 11:55:51,351 - Velocimacro : added #lazyManyToMany(  ) : source = templates/class.vm
+2012-05-23 11:55:51,351 - Velocimacro : added #lazyOneToMany(  ) : source = templates/class.vm
+2012-05-23 11:55:51,352 - Velocimacro : added #lazyOneToOne(  ) : source = templates/class.vm
+2012-05-23 11:55:51,352 - Velocimacro : added #lazyManyToOne(  ) : source = templates/class.vm
+2012-05-23 11:55:51,360 - Velocimacro : added #doAnnotations(  ) : source = templates/class.vm
+2012-05-23 11:55:51,361 - Velocimacro : added #prefix(  ) : source = templates/class.vm
+2012-05-23 11:55:51,362 - Velocimacro : added #doClassType(  ) : source = templates/class.vm
+2012-05-23 11:55:51,365 - Velocimacro : added #doManyToMany(  property ) : source = templates/class.vm
+2012-05-23 11:55:51,366 - Velocimacro : added #oneToManyAnnotation(  property ) : source = templates/class.vm
+2012-05-23 11:55:51,372 - Velocimacro : added #manyToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 11:55:51,375 - Velocimacro : added #OneToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 11:55:51,378 - Velocimacro : added #doConstructorSignature(  ) : source = templates/class.vm
+2012-05-23 11:55:51,383 - Velocimacro : added #doClassMacros(  ) : source = templates/class.vm
+2012-05-23 11:55:51,471 - ResourceManager : found templates/class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 11:55:51,472 - Velocimacro : VM addition rejected : prefix : inline not allowed to replace existing VM
+2012-05-23 11:55:51,472 - Failed to add macro: #prefix(  ) : source = templates/classIface.vm
+2012-05-23 11:55:51,481 - ResourceManager : found templates/classIface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 11:56:23,680 - Log4JLogChute initialized using file 'velocity.log'
+2012-05-23 11:56:23,681 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2012-05-23 11:56:23,681 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2012-05-23 11:56:23,681 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2012-05-23 11:56:23,681 - Couldn't find class org.apache.velocity.runtime.log.AvalonLogChute or necessary supporting classes in classpath.
+java.lang.NoClassDefFoundError: org/apache/log/format/Formatter
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:247)
+	at org.apache.velocity.util.ClassUtils.getClass(ClassUtils.java:63)
+	at org.apache.velocity.util.ClassUtils.getNewInstance(ClassUtils.java:95)
+	at org.apache.velocity.runtime.log.LogManager.createLogChute(LogManager.java:147)
+	at org.apache.velocity.runtime.log.LogManager.updateLog(LogManager.java:208)
+	at org.apache.velocity.runtime.RuntimeInstance.initializeLog(RuntimeInstance.java:728)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:240)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:534)
+	at org.apache.velocity.runtime.RuntimeSingleton.init(RuntimeSingleton.java:227)
+	at org.apache.velocity.app.Velocity.init(Velocity.java:111)
+	at com.felees.hbnpojogen.Config.parseConfig(Config.java:71)
+	at com.felees.hbnpojogen.HbnPojoGen.run(HbnPojoGen.java:417)
+	at com.felees.hbnpojogen.HbnPojoGen.main(HbnPojoGen.java:470)
+Caused by: java.lang.ClassNotFoundException: org.apache.log.format.Formatter
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 14 more
+2012-05-23 11:56:23,682 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 11:56:23,682 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 11:56:23,684 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2012-05-23 11:56:23,685 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 11:56:23,688 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2012-05-23 11:56:23,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2012-05-23 11:56:23,690 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2012-05-23 11:56:23,691 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2012-05-23 11:56:23,692 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2012-05-23 11:56:23,692 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2012-05-23 11:56:23,717 - Created '20' parsers.
+2012-05-23 11:56:23,741 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2012-05-23 11:56:23,741 - Velocimacro : Default library not found.
+2012-05-23 11:56:23,741 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2012-05-23 11:56:23,742 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2012-05-23 11:56:23,742 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2012-05-23 11:56:23,742 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2012-05-23 11:56:23,757 - Velocimacro : added #doCalcFullType(  ) : source = templates/class.vm
+2012-05-23 11:56:23,759 - Velocimacro : added #lazyManyToMany(  ) : source = templates/class.vm
+2012-05-23 11:56:23,759 - Velocimacro : added #lazyOneToMany(  ) : source = templates/class.vm
+2012-05-23 11:56:23,760 - Velocimacro : added #lazyOneToOne(  ) : source = templates/class.vm
+2012-05-23 11:56:23,760 - Velocimacro : added #lazyManyToOne(  ) : source = templates/class.vm
+2012-05-23 11:56:23,768 - Velocimacro : added #doAnnotations(  ) : source = templates/class.vm
+2012-05-23 11:56:23,769 - Velocimacro : added #prefix(  ) : source = templates/class.vm
+2012-05-23 11:56:23,770 - Velocimacro : added #doClassType(  ) : source = templates/class.vm
+2012-05-23 11:56:23,773 - Velocimacro : added #doManyToMany(  property ) : source = templates/class.vm
+2012-05-23 11:56:23,774 - Velocimacro : added #oneToManyAnnotation(  property ) : source = templates/class.vm
+2012-05-23 11:56:23,780 - Velocimacro : added #manyToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 11:56:23,783 - Velocimacro : added #OneToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 11:56:23,785 - Velocimacro : added #doConstructorSignature(  ) : source = templates/class.vm
+2012-05-23 11:56:23,791 - Velocimacro : added #doClassMacros(  ) : source = templates/class.vm
+2012-05-23 11:56:23,890 - ResourceManager : found templates/class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 11:56:23,892 - Velocimacro : VM addition rejected : prefix : inline not allowed to replace existing VM
+2012-05-23 11:56:23,892 - Failed to add macro: #prefix(  ) : source = templates/classIface.vm
+2012-05-23 11:56:23,901 - ResourceManager : found templates/classIface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 11:59:02,166 - Log4JLogChute initialized using file 'velocity.log'
+2012-05-23 11:59:02,167 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2012-05-23 11:59:02,167 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2012-05-23 11:59:02,167 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2012-05-23 11:59:02,167 - Couldn't find class org.apache.velocity.runtime.log.AvalonLogChute or necessary supporting classes in classpath.
+java.lang.NoClassDefFoundError: org/apache/log/format/Formatter
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:247)
+	at org.apache.velocity.util.ClassUtils.getClass(ClassUtils.java:63)
+	at org.apache.velocity.util.ClassUtils.getNewInstance(ClassUtils.java:95)
+	at org.apache.velocity.runtime.log.LogManager.createLogChute(LogManager.java:147)
+	at org.apache.velocity.runtime.log.LogManager.updateLog(LogManager.java:208)
+	at org.apache.velocity.runtime.RuntimeInstance.initializeLog(RuntimeInstance.java:728)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:240)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:534)
+	at org.apache.velocity.runtime.RuntimeSingleton.init(RuntimeSingleton.java:227)
+	at org.apache.velocity.app.Velocity.init(Velocity.java:111)
+	at com.felees.hbnpojogen.Config.parseConfig(Config.java:71)
+	at com.felees.hbnpojogen.HbnPojoGen.run(HbnPojoGen.java:417)
+	at com.felees.hbnpojogen.HbnPojoGen.main(HbnPojoGen.java:470)
+Caused by: java.lang.ClassNotFoundException: org.apache.log.format.Formatter
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 14 more
+2012-05-23 11:59:02,169 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 11:59:02,169 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 11:59:02,170 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2012-05-23 11:59:02,172 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 11:59:02,174 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2012-05-23 11:59:02,175 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2012-05-23 11:59:02,176 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2012-05-23 11:59:02,177 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2012-05-23 11:59:02,179 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2012-05-23 11:59:02,179 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2012-05-23 11:59:02,204 - Created '20' parsers.
+2012-05-23 11:59:02,209 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2012-05-23 11:59:02,209 - Velocimacro : Default library not found.
+2012-05-23 11:59:02,209 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2012-05-23 11:59:02,209 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2012-05-23 11:59:02,209 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2012-05-23 11:59:02,209 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2012-05-23 11:59:02,221 - Velocimacro : added #doCalcFullType(  ) : source = templates/class.vm
+2012-05-23 11:59:02,222 - Velocimacro : added #lazyManyToMany(  ) : source = templates/class.vm
+2012-05-23 11:59:02,223 - Velocimacro : added #lazyOneToMany(  ) : source = templates/class.vm
+2012-05-23 11:59:02,223 - Velocimacro : added #lazyOneToOne(  ) : source = templates/class.vm
+2012-05-23 11:59:02,224 - Velocimacro : added #lazyManyToOne(  ) : source = templates/class.vm
+2012-05-23 11:59:02,231 - Velocimacro : added #doAnnotations(  ) : source = templates/class.vm
+2012-05-23 11:59:02,232 - Velocimacro : added #prefix(  ) : source = templates/class.vm
+2012-05-23 11:59:02,233 - Velocimacro : added #doClassType(  ) : source = templates/class.vm
+2012-05-23 11:59:02,236 - Velocimacro : added #doManyToMany(  property ) : source = templates/class.vm
+2012-05-23 11:59:02,237 - Velocimacro : added #oneToManyAnnotation(  property ) : source = templates/class.vm
+2012-05-23 11:59:02,242 - Velocimacro : added #manyToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 11:59:02,246 - Velocimacro : added #OneToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 11:59:02,248 - Velocimacro : added #doConstructorSignature(  ) : source = templates/class.vm
+2012-05-23 11:59:02,254 - Velocimacro : added #doClassMacros(  ) : source = templates/class.vm
+2012-05-23 11:59:02,341 - ResourceManager : found templates/class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 11:59:02,342 - Velocimacro : VM addition rejected : prefix : inline not allowed to replace existing VM
+2012-05-23 11:59:02,342 - Failed to add macro: #prefix(  ) : source = templates/classIface.vm
+2012-05-23 11:59:02,351 - ResourceManager : found templates/classIface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 11:59:53,506 - Log4JLogChute initialized using file 'velocity.log'
+2012-05-23 11:59:53,506 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2012-05-23 11:59:53,506 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2012-05-23 11:59:53,507 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2012-05-23 11:59:53,507 - Couldn't find class org.apache.velocity.runtime.log.AvalonLogChute or necessary supporting classes in classpath.
+java.lang.NoClassDefFoundError: org/apache/log/format/Formatter
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:247)
+	at org.apache.velocity.util.ClassUtils.getClass(ClassUtils.java:63)
+	at org.apache.velocity.util.ClassUtils.getNewInstance(ClassUtils.java:95)
+	at org.apache.velocity.runtime.log.LogManager.createLogChute(LogManager.java:147)
+	at org.apache.velocity.runtime.log.LogManager.updateLog(LogManager.java:208)
+	at org.apache.velocity.runtime.RuntimeInstance.initializeLog(RuntimeInstance.java:728)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:240)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:534)
+	at org.apache.velocity.runtime.RuntimeSingleton.init(RuntimeSingleton.java:227)
+	at org.apache.velocity.app.Velocity.init(Velocity.java:111)
+	at com.felees.hbnpojogen.Config.parseConfig(Config.java:71)
+	at com.felees.hbnpojogen.HbnPojoGen.run(HbnPojoGen.java:417)
+	at com.felees.hbnpojogen.HbnPojoGen.main(HbnPojoGen.java:470)
+Caused by: java.lang.ClassNotFoundException: org.apache.log.format.Formatter
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 14 more
+2012-05-23 11:59:53,508 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 11:59:53,508 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 11:59:53,510 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2012-05-23 11:59:53,512 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 11:59:53,514 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2012-05-23 11:59:53,515 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2012-05-23 11:59:53,516 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2012-05-23 11:59:53,517 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2012-05-23 11:59:53,518 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2012-05-23 11:59:53,519 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2012-05-23 11:59:53,545 - Created '20' parsers.
+2012-05-23 11:59:53,550 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2012-05-23 11:59:53,551 - Velocimacro : Default library not found.
+2012-05-23 11:59:53,551 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2012-05-23 11:59:53,551 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2012-05-23 11:59:53,551 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2012-05-23 11:59:53,551 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2012-05-23 11:59:53,562 - Velocimacro : added #doCalcFullType(  ) : source = templates/class.vm
+2012-05-23 11:59:53,564 - Velocimacro : added #lazyManyToMany(  ) : source = templates/class.vm
+2012-05-23 11:59:53,564 - Velocimacro : added #lazyOneToMany(  ) : source = templates/class.vm
+2012-05-23 11:59:53,565 - Velocimacro : added #lazyOneToOne(  ) : source = templates/class.vm
+2012-05-23 11:59:53,565 - Velocimacro : added #lazyManyToOne(  ) : source = templates/class.vm
+2012-05-23 11:59:53,573 - Velocimacro : added #doAnnotations(  ) : source = templates/class.vm
+2012-05-23 11:59:53,574 - Velocimacro : added #prefix(  ) : source = templates/class.vm
+2012-05-23 11:59:53,575 - Velocimacro : added #doClassType(  ) : source = templates/class.vm
+2012-05-23 11:59:53,577 - Velocimacro : added #doManyToMany(  property ) : source = templates/class.vm
+2012-05-23 11:59:53,579 - Velocimacro : added #oneToManyAnnotation(  property ) : source = templates/class.vm
+2012-05-23 11:59:53,586 - Velocimacro : added #manyToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 11:59:53,589 - Velocimacro : added #OneToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 11:59:53,592 - Velocimacro : added #doConstructorSignature(  ) : source = templates/class.vm
+2012-05-23 11:59:53,598 - Velocimacro : added #doClassMacros(  ) : source = templates/class.vm
+2012-05-23 11:59:53,686 - ResourceManager : found templates/class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 11:59:53,687 - Velocimacro : VM addition rejected : prefix : inline not allowed to replace existing VM
+2012-05-23 11:59:53,687 - Failed to add macro: #prefix(  ) : source = templates/classIface.vm
+2012-05-23 11:59:53,697 - ResourceManager : found templates/classIface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:14,120 - Log4JLogChute initialized using file 'velocity.log'
+2012-05-23 12:00:14,121 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2012-05-23 12:00:14,121 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2012-05-23 12:00:14,121 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2012-05-23 12:00:14,122 - Couldn't find class org.apache.velocity.runtime.log.AvalonLogChute or necessary supporting classes in classpath.
+java.lang.NoClassDefFoundError: org/apache/log/format/Formatter
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:247)
+	at org.apache.velocity.util.ClassUtils.getClass(ClassUtils.java:63)
+	at org.apache.velocity.util.ClassUtils.getNewInstance(ClassUtils.java:95)
+	at org.apache.velocity.runtime.log.LogManager.createLogChute(LogManager.java:147)
+	at org.apache.velocity.runtime.log.LogManager.updateLog(LogManager.java:208)
+	at org.apache.velocity.runtime.RuntimeInstance.initializeLog(RuntimeInstance.java:728)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:240)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:534)
+	at org.apache.velocity.runtime.RuntimeSingleton.init(RuntimeSingleton.java:227)
+	at org.apache.velocity.app.Velocity.init(Velocity.java:111)
+	at com.felees.hbnpojogen.Config.parseConfig(Config.java:71)
+	at com.felees.hbnpojogen.HbnPojoGen.run(HbnPojoGen.java:417)
+	at com.felees.hbnpojogen.HbnPojoGen.main(HbnPojoGen.java:470)
+Caused by: java.lang.ClassNotFoundException: org.apache.log.format.Formatter
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 14 more
+2012-05-23 12:00:14,123 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 12:00:14,123 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 12:00:14,125 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2012-05-23 12:00:14,126 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:14,128 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2012-05-23 12:00:14,129 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2012-05-23 12:00:14,131 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2012-05-23 12:00:14,131 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2012-05-23 12:00:14,133 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2012-05-23 12:00:14,133 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2012-05-23 12:00:14,157 - Created '20' parsers.
+2012-05-23 12:00:14,162 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2012-05-23 12:00:14,162 - Velocimacro : Default library not found.
+2012-05-23 12:00:14,162 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2012-05-23 12:00:14,163 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2012-05-23 12:00:14,163 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2012-05-23 12:00:14,163 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2012-05-23 12:00:14,174 - Velocimacro : added #doCalcFullType(  ) : source = templates/class.vm
+2012-05-23 12:00:14,175 - Velocimacro : added #lazyManyToMany(  ) : source = templates/class.vm
+2012-05-23 12:00:14,176 - Velocimacro : added #lazyOneToMany(  ) : source = templates/class.vm
+2012-05-23 12:00:14,176 - Velocimacro : added #lazyOneToOne(  ) : source = templates/class.vm
+2012-05-23 12:00:14,177 - Velocimacro : added #lazyManyToOne(  ) : source = templates/class.vm
+2012-05-23 12:00:14,185 - Velocimacro : added #doAnnotations(  ) : source = templates/class.vm
+2012-05-23 12:00:14,185 - Velocimacro : added #prefix(  ) : source = templates/class.vm
+2012-05-23 12:00:14,186 - Velocimacro : added #doClassType(  ) : source = templates/class.vm
+2012-05-23 12:00:14,189 - Velocimacro : added #doManyToMany(  property ) : source = templates/class.vm
+2012-05-23 12:00:14,190 - Velocimacro : added #oneToManyAnnotation(  property ) : source = templates/class.vm
+2012-05-23 12:00:14,195 - Velocimacro : added #manyToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 12:00:14,199 - Velocimacro : added #OneToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 12:00:14,201 - Velocimacro : added #doConstructorSignature(  ) : source = templates/class.vm
+2012-05-23 12:00:14,207 - Velocimacro : added #doClassMacros(  ) : source = templates/class.vm
+2012-05-23 12:00:14,290 - ResourceManager : found templates/class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:14,291 - Velocimacro : VM addition rejected : prefix : inline not allowed to replace existing VM
+2012-05-23 12:00:14,291 - Failed to add macro: #prefix(  ) : source = templates/classIface.vm
+2012-05-23 12:00:14,300 - ResourceManager : found templates/classIface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:40,122 - Log4JLogChute initialized using file 'velocity.log'
+2012-05-23 12:00:40,123 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2012-05-23 12:00:40,123 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2012-05-23 12:00:40,123 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2012-05-23 12:00:40,123 - Couldn't find class org.apache.velocity.runtime.log.AvalonLogChute or necessary supporting classes in classpath.
+java.lang.NoClassDefFoundError: org/apache/log/format/Formatter
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:247)
+	at org.apache.velocity.util.ClassUtils.getClass(ClassUtils.java:63)
+	at org.apache.velocity.util.ClassUtils.getNewInstance(ClassUtils.java:95)
+	at org.apache.velocity.runtime.log.LogManager.createLogChute(LogManager.java:147)
+	at org.apache.velocity.runtime.log.LogManager.updateLog(LogManager.java:208)
+	at org.apache.velocity.runtime.RuntimeInstance.initializeLog(RuntimeInstance.java:728)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:240)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:534)
+	at org.apache.velocity.runtime.RuntimeSingleton.init(RuntimeSingleton.java:227)
+	at org.apache.velocity.app.Velocity.init(Velocity.java:111)
+	at com.felees.hbnpojogen.Config.parseConfig(Config.java:71)
+	at com.felees.hbnpojogen.HbnPojoGen.run(HbnPojoGen.java:417)
+	at com.felees.hbnpojogen.HbnPojoGen.main(HbnPojoGen.java:470)
+Caused by: java.lang.ClassNotFoundException: org.apache.log.format.Formatter
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 14 more
+2012-05-23 12:00:40,125 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 12:00:40,125 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 12:00:40,126 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2012-05-23 12:00:40,128 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:40,130 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2012-05-23 12:00:40,131 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2012-05-23 12:00:40,132 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2012-05-23 12:00:40,133 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2012-05-23 12:00:40,134 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2012-05-23 12:00:40,135 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2012-05-23 12:00:40,159 - Created '20' parsers.
+2012-05-23 12:00:40,164 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2012-05-23 12:00:40,165 - Velocimacro : Default library not found.
+2012-05-23 12:00:40,165 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2012-05-23 12:00:40,165 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2012-05-23 12:00:40,165 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2012-05-23 12:00:40,165 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2012-05-23 12:00:40,176 - Velocimacro : added #doCalcFullType(  ) : source = templates/class.vm
+2012-05-23 12:00:40,178 - Velocimacro : added #lazyManyToMany(  ) : source = templates/class.vm
+2012-05-23 12:00:40,178 - Velocimacro : added #lazyOneToMany(  ) : source = templates/class.vm
+2012-05-23 12:00:40,179 - Velocimacro : added #lazyOneToOne(  ) : source = templates/class.vm
+2012-05-23 12:00:40,179 - Velocimacro : added #lazyManyToOne(  ) : source = templates/class.vm
+2012-05-23 12:00:40,187 - Velocimacro : added #doAnnotations(  ) : source = templates/class.vm
+2012-05-23 12:00:40,188 - Velocimacro : added #prefix(  ) : source = templates/class.vm
+2012-05-23 12:00:40,189 - Velocimacro : added #doClassType(  ) : source = templates/class.vm
+2012-05-23 12:00:40,191 - Velocimacro : added #doManyToMany(  property ) : source = templates/class.vm
+2012-05-23 12:00:40,193 - Velocimacro : added #oneToManyAnnotation(  property ) : source = templates/class.vm
+2012-05-23 12:00:40,198 - Velocimacro : added #manyToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 12:00:40,202 - Velocimacro : added #OneToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 12:00:40,204 - Velocimacro : added #doConstructorSignature(  ) : source = templates/class.vm
+2012-05-23 12:00:40,210 - Velocimacro : added #doClassMacros(  ) : source = templates/class.vm
+2012-05-23 12:00:40,295 - ResourceManager : found templates/class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:40,301 - Velocimacro : VM addition rejected : prefix : inline not allowed to replace existing VM
+2012-05-23 12:00:40,301 - Failed to add macro: #prefix(  ) : source = templates/classIface.vm
+2012-05-23 12:00:40,310 - ResourceManager : found templates/classIface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:51,385 - Log4JLogChute initialized using file 'velocity.log'
+2012-05-23 12:00:51,386 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2012-05-23 12:00:51,386 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2012-05-23 12:00:51,386 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2012-05-23 12:00:51,386 - Couldn't find class org.apache.velocity.runtime.log.AvalonLogChute or necessary supporting classes in classpath.
+java.lang.NoClassDefFoundError: org/apache/log/format/Formatter
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:247)
+	at org.apache.velocity.util.ClassUtils.getClass(ClassUtils.java:63)
+	at org.apache.velocity.util.ClassUtils.getNewInstance(ClassUtils.java:95)
+	at org.apache.velocity.runtime.log.LogManager.createLogChute(LogManager.java:147)
+	at org.apache.velocity.runtime.log.LogManager.updateLog(LogManager.java:208)
+	at org.apache.velocity.runtime.RuntimeInstance.initializeLog(RuntimeInstance.java:728)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:240)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:534)
+	at org.apache.velocity.runtime.RuntimeSingleton.init(RuntimeSingleton.java:227)
+	at org.apache.velocity.app.Velocity.init(Velocity.java:111)
+	at com.felees.hbnpojogen.Config.parseConfig(Config.java:71)
+	at com.felees.hbnpojogen.HbnPojoGen.run(HbnPojoGen.java:417)
+	at com.felees.hbnpojogen.HbnPojoGen.main(HbnPojoGen.java:470)
+Caused by: java.lang.ClassNotFoundException: org.apache.log.format.Formatter
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 14 more
+2012-05-23 12:00:51,388 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 12:00:51,388 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 12:00:51,389 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2012-05-23 12:00:51,391 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:51,393 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2012-05-23 12:00:51,394 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2012-05-23 12:00:51,395 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2012-05-23 12:00:51,396 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2012-05-23 12:00:51,397 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2012-05-23 12:00:51,398 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2012-05-23 12:00:51,421 - Created '20' parsers.
+2012-05-23 12:00:51,426 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2012-05-23 12:00:51,426 - Velocimacro : Default library not found.
+2012-05-23 12:00:51,426 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2012-05-23 12:00:51,426 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2012-05-23 12:00:51,426 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2012-05-23 12:00:51,427 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2012-05-23 12:00:51,438 - Velocimacro : added #doCalcFullType(  ) : source = templates/class.vm
+2012-05-23 12:00:51,439 - Velocimacro : added #lazyManyToMany(  ) : source = templates/class.vm
+2012-05-23 12:00:51,440 - Velocimacro : added #lazyOneToMany(  ) : source = templates/class.vm
+2012-05-23 12:00:51,440 - Velocimacro : added #lazyOneToOne(  ) : source = templates/class.vm
+2012-05-23 12:00:51,441 - Velocimacro : added #lazyManyToOne(  ) : source = templates/class.vm
+2012-05-23 12:00:51,449 - Velocimacro : added #doAnnotations(  ) : source = templates/class.vm
+2012-05-23 12:00:51,449 - Velocimacro : added #prefix(  ) : source = templates/class.vm
+2012-05-23 12:00:51,451 - Velocimacro : added #doClassType(  ) : source = templates/class.vm
+2012-05-23 12:00:51,453 - Velocimacro : added #doManyToMany(  property ) : source = templates/class.vm
+2012-05-23 12:00:51,454 - Velocimacro : added #oneToManyAnnotation(  property ) : source = templates/class.vm
+2012-05-23 12:00:51,459 - Velocimacro : added #manyToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 12:00:51,463 - Velocimacro : added #OneToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 12:00:51,465 - Velocimacro : added #doConstructorSignature(  ) : source = templates/class.vm
+2012-05-23 12:00:51,471 - Velocimacro : added #doClassMacros(  ) : source = templates/class.vm
+2012-05-23 12:00:51,555 - ResourceManager : found templates/class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:51,556 - Velocimacro : VM addition rejected : prefix : inline not allowed to replace existing VM
+2012-05-23 12:00:51,556 - Failed to add macro: #prefix(  ) : source = templates/classIface.vm
+2012-05-23 12:00:51,565 - ResourceManager : found templates/classIface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,674 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,688 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,701 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,702 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,756 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,758 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,765 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,766 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,784 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,786 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,815 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,817 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,834 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,844 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,855 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,856 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,869 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,871 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,887 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,888 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,928 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,929 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,947 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,950 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,961 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,962 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,968 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:52,969 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,010 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,012 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,024 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,025 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,035 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,036 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,045 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,046 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,053 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,054 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,069 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,070 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,082 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,083 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,095 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,098 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,103 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,104 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,174 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,175 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,179 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,180 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,187 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,190 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,202 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,203 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,211 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,212 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,216 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,217 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,220 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,222 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,224 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,225 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,229 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,230 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,232 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,233 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,237 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,238 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,239 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,240 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,246 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,247 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,249 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,251 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,254 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,255 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,263 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,264 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,270 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,271 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,273 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,274 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,277 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,278 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,280 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,281 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,284 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,285 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,289 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,290 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,292 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,293 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,309 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,310 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,314 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,315 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,318 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,319 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,328 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,329 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,342 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,343 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,344 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,345 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,358 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,359 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,361 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,396 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,399 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,400 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,401 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,402 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,415 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,416 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,418 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,419 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,422 - Velocimacro : added #state(  ) : source = templates/enum.vm
+2012-05-23 12:00:53,425 - ResourceManager : found templates/enum.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,426 - ResourceManager : found templates/enumClass.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,428 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,429 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,431 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,433 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,434 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,436 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,437 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,440 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,441 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,443 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,444 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,446 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,448 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,449 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,451 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,453 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,455 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,456 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,458 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,460 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,461 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,463 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,465 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,467 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,469 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,471 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,472 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,474 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,476 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,481 - ResourceManager : found templates/applicationContext.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,485 - ResourceManager : found templates/hbnPojoGenBuild.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,486 - ResourceManager : found templates/ehcache.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,489 - Velocimacro : added #doprefix(  ) : source = templates/daotest.vm
+2012-05-23 12:00:53,489 - Velocimacro : added #doSuffix(  ) : source = templates/daotest.vm
+2012-05-23 12:00:53,490 - Velocimacro : added #custom(  title ) : source = templates/daotest.vm
+2012-05-23 12:00:53,491 - Velocimacro : added #customPost(  title ) : source = templates/daotest.vm
+2012-05-23 12:00:53,492 - Velocimacro : added #cleanup(  title firstPass ) : source = templates/daotest.vm
+2012-05-23 12:00:53,504 - ResourceManager : found templates/daotest.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,546 - ResourceManager : found templates/dataPoolFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,565 - Velocimacro : added #classname(  ) : source = templates/datalayer.vm
+2012-05-23 12:00:53,566 - Velocimacro : added #cn(  ) : source = templates/datalayer.vm
+2012-05-23 12:00:53,571 - ResourceManager : found templates/datalayer.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:00:53,575 - Null reference [template 'templates/datalayer.vm', line 115, column 27] : $class.className cannot be resolved.
+2012-05-23 12:00:53,575 - Null reference [template 'templates/datalayer.vm', line 135, column 35] : $class.className cannot be resolved.
+2012-05-23 12:00:53,590 - Null reference [template 'templates/datalayer.vm', line 115, column 27] : $class.className cannot be resolved.
+2012-05-23 12:00:53,590 - Null reference [template 'templates/datalayer.vm', line 135, column 35] : $class.className cannot be resolved.
+2012-05-23 12:01:37,002 - Log4JLogChute initialized using file 'velocity.log'
+2012-05-23 12:01:37,002 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2012-05-23 12:01:37,003 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2012-05-23 12:01:37,003 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2012-05-23 12:01:37,003 - Couldn't find class org.apache.velocity.runtime.log.AvalonLogChute or necessary supporting classes in classpath.
+java.lang.NoClassDefFoundError: org/apache/log/format/Formatter
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:247)
+	at org.apache.velocity.util.ClassUtils.getClass(ClassUtils.java:63)
+	at org.apache.velocity.util.ClassUtils.getNewInstance(ClassUtils.java:95)
+	at org.apache.velocity.runtime.log.LogManager.createLogChute(LogManager.java:147)
+	at org.apache.velocity.runtime.log.LogManager.updateLog(LogManager.java:208)
+	at org.apache.velocity.runtime.RuntimeInstance.initializeLog(RuntimeInstance.java:728)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:240)
+	at org.apache.velocity.runtime.RuntimeInstance.init(RuntimeInstance.java:534)
+	at org.apache.velocity.runtime.RuntimeSingleton.init(RuntimeSingleton.java:227)
+	at org.apache.velocity.app.Velocity.init(Velocity.java:111)
+	at com.felees.hbnpojogen.Config.parseConfig(Config.java:71)
+	at com.felees.hbnpojogen.HbnPojoGen.run(HbnPojoGen.java:417)
+	at com.felees.hbnpojogen.HbnPojoGen.main(HbnPojoGen.java:470)
+Caused by: java.lang.ClassNotFoundException: org.apache.log.format.Formatter
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 14 more
+2012-05-23 12:01:37,004 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 12:01:37,004 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2012-05-23 12:01:37,006 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2012-05-23 12:01:37,008 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:37,010 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2012-05-23 12:01:37,011 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2012-05-23 12:01:37,012 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2012-05-23 12:01:37,013 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2012-05-23 12:01:37,014 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2012-05-23 12:01:37,015 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2012-05-23 12:01:37,038 - Created '20' parsers.
+2012-05-23 12:01:37,043 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2012-05-23 12:01:37,044 - Velocimacro : Default library not found.
+2012-05-23 12:01:37,044 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2012-05-23 12:01:37,044 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2012-05-23 12:01:37,044 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2012-05-23 12:01:37,044 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2012-05-23 12:01:37,055 - Velocimacro : added #doCalcFullType(  ) : source = templates/class.vm
+2012-05-23 12:01:37,057 - Velocimacro : added #lazyManyToMany(  ) : source = templates/class.vm
+2012-05-23 12:01:37,057 - Velocimacro : added #lazyOneToMany(  ) : source = templates/class.vm
+2012-05-23 12:01:37,058 - Velocimacro : added #lazyOneToOne(  ) : source = templates/class.vm
+2012-05-23 12:01:37,058 - Velocimacro : added #lazyManyToOne(  ) : source = templates/class.vm
+2012-05-23 12:01:37,066 - Velocimacro : added #doAnnotations(  ) : source = templates/class.vm
+2012-05-23 12:01:37,067 - Velocimacro : added #prefix(  ) : source = templates/class.vm
+2012-05-23 12:01:37,068 - Velocimacro : added #doClassType(  ) : source = templates/class.vm
+2012-05-23 12:01:37,070 - Velocimacro : added #doManyToMany(  property ) : source = templates/class.vm
+2012-05-23 12:01:37,072 - Velocimacro : added #oneToManyAnnotation(  property ) : source = templates/class.vm
+2012-05-23 12:01:37,077 - Velocimacro : added #manyToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 12:01:37,080 - Velocimacro : added #OneToOneAnnotation(  property ) : source = templates/class.vm
+2012-05-23 12:01:37,083 - Velocimacro : added #doConstructorSignature(  ) : source = templates/class.vm
+2012-05-23 12:01:37,088 - Velocimacro : added #doClassMacros(  ) : source = templates/class.vm
+2012-05-23 12:01:37,172 - ResourceManager : found templates/class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:37,173 - Velocimacro : VM addition rejected : prefix : inline not allowed to replace existing VM
+2012-05-23 12:01:37,173 - Failed to add macro: #prefix(  ) : source = templates/classIface.vm
+2012-05-23 12:01:37,182 - ResourceManager : found templates/classIface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,079 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,081 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,090 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,091 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,140 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,141 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,150 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,151 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,171 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,173 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,181 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,182 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,200 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,201 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,211 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,213 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,231 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,232 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,242 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,243 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,276 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,277 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,287 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,289 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,309 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,311 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,320 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,321 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,370 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,371 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,399 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,400 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,410 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,411 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,426 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,427 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,433 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,435 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,452 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,453 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,459 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,460 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,478 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,479 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,485 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,486 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,501 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,502 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,508 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,509 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,519 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,520 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,526 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,527 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,641 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,642 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,646 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,647 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,651 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,652 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,653 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,654 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,668 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,669 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,671 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,676 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,679 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,680 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,682 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,682 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,687 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,689 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,690 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,693 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,696 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,697 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,705 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,706 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,716 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,717 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,719 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,720 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,723 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,724 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,726 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,726 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,730 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,731 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,736 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,736 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,738 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,739 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,755 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,755 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,759 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,760 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,764 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,765 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,767 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,768 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,771 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,772 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,774 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,782 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,785 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,786 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,788 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,792 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,795 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,796 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,798 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,798 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,801 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,802 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,804 - ResourceManager : found templates/dao.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,805 - ResourceManager : found templates/daoInterface.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,807 - Velocimacro : added #state(  ) : source = templates/enum.vm
+2012-05-23 12:01:38,887 - ResourceManager : found templates/enum.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,888 - ResourceManager : found templates/enumClass.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,889 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,895 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,896 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,897 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,899 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,910 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,912 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,914 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,916 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,917 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,919 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,922 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,923 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,937 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,939 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,941 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,942 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,944 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,945 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,975 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,977 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,979 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,984 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,986 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,988 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:38,989 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:39,004 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:39,010 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:39,011 - ResourceManager : found templates/daoFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:39,015 - ResourceManager : found templates/applicationContext.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:39,019 - ResourceManager : found templates/hbnPojoGenBuild.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:39,020 - ResourceManager : found templates/ehcache.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:39,023 - Velocimacro : added #doprefix(  ) : source = templates/daotest.vm
+2012-05-23 12:01:39,023 - Velocimacro : added #doSuffix(  ) : source = templates/daotest.vm
+2012-05-23 12:01:39,024 - Velocimacro : added #custom(  title ) : source = templates/daotest.vm
+2012-05-23 12:01:39,024 - Velocimacro : added #customPost(  title ) : source = templates/daotest.vm
+2012-05-23 12:01:39,025 - Velocimacro : added #cleanup(  title firstPass ) : source = templates/daotest.vm
+2012-05-23 12:01:39,035 - ResourceManager : found templates/daotest.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:39,076 - ResourceManager : found templates/dataPoolFactory.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:39,101 - Velocimacro : added #classname(  ) : source = templates/datalayer.vm
+2012-05-23 12:01:39,101 - Velocimacro : added #cn(  ) : source = templates/datalayer.vm
+2012-05-23 12:01:39,105 - ResourceManager : found templates/datalayer.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2012-05-23 12:01:39,109 - Null reference [template 'templates/datalayer.vm', line 115, column 27] : $class.className cannot be resolved.
+2012-05-23 12:01:39,109 - Null reference [template 'templates/datalayer.vm', line 135, column 35] : $class.className cannot be resolved.
+2012-05-23 12:01:39,117 - Null reference [template 'templates/datalayer.vm', line 115, column 27] : $class.className cannot be resolved.
+2012-05-23 12:01:39,117 - Null reference [template 'templates/datalayer.vm', line 135, column 35] : $class.className cannot be resolved.

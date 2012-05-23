@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23-May-2012 12:25:28 by Hibernate Tools 3.2.2.GA -->
+<hibernate-mapping>
+    <class name="org.cqc.CqcAddressCache" table="cqc_address_cache" catalog="etl">
+        <id name="lid" type="java.lang.Integer">
+            <column name="lid" />
+
+            <generator class="identity" />
+        </id>
+
+        <property name="street" type="string">
+            <column name="street" not-null="true" />
+        </property>
+
+        <property name="additional" type="string">
+            <column name="additional" not-null="true" />
+        </property>
+
+        <property name="city" type="string">
+            <column name="city" not-null="true" />
+        </property>
+
+        <property name="province" type="string">
+            <column name="province" not-null="true" />
+        </property>
+
+        <property name="postalCode" type="string">
+            <column name="postal_code" length="16" not-null="true" />
+        </property>
+
+        <property name="country" type="string">
+            <column name="country" length="2" not-null="true" />
+        </property>
+
+        <property name="latitude" type="big_decimal">
+            <column name="latitude" precision="10" scale="8" not-null="true" />
+        </property>
+
+        <property name="longitude" type="big_decimal">
+            <column name="longitude" precision="10" scale="8" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
+

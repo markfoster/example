@@ -1,21 +1,29 @@
-<List_Of_Provider inserts="1" updates="1" deletes="1">
+<List_Of_Provider>
    <Provider>
-     <providerId>1-153033151</providerId>
-     <providerName>Dr. Shailesh Gohil</providerName>
-     <providerType>PROVIDER</providerType>
-     <alsoKnownAs>S D Gohil</alsoKnownAs>
-     <address1>8 Lansdown Road</address1>
-     <towncity>Sidcup</towncity>
-     <county>Kent</county>
-     <postcode>DA14 4EG</postcode>
+     <Provider_Id>1-153033151</Provider_Id>
+     <Name>Dr. Shailesh Gohil</Name>
+     <In_Process></In_Process>
+     <Type>PROVIDER</Type>
+     <Local_Authority></Local_Authority>
+     <Region></Region>
+     <Also_Known_As>S D Gohil</Also_Known_As>
+     <Address_Line_1>8 Lansdown Road</Address_Line_1>
+     <Address_Line_2></Address_Line_2>
+     <Town_City>Sidcup</Town_City>
+     <County>Kent</County>
+     <Postcode>DA14 4EG</Postcode>
 <!--
      <latitude>0E-8</latitude>
      <longitude>0E-8</longitude>
 -->
-     <typeInfo1>Primary Dental Care</typeInfo1>
-     <typeInfo2>Provider</typeInfo2>
-     <telephone>02083006200</telephone>
-     <isPartnership>N</isPartnership>
+     <Subtype>Primary Dental Care</Subtype>
+     <Segmentation></Segmentation>
+     <Telephone>02083006200</Telephone>
+     <Email></Email>
+     <Website></Website>
+     <Fax></Fax>
+     <Under_Review_Text></Under_Review_Text>
+     <Is_Partnership>N</Is_Partnership>
      <Action_Code>I</Action_Code>
    </Provider>
 </List_Of_Provider>

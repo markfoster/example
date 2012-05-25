@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+<!  Entity: 
+<!                      org.cqc.NominatedIndividual
+<! 
+<!  Author: matt h
+<!  Generated: 30-Apr-2012 13:37:57 
+<!  Hibernate version: 3.2.2.GA 
+<!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<hibernate-mapping>
+    <class name="org.cqc.NominatedIndividual" table="nominated_individual" catalog="hibtest">
+        <composite-id name="id" class="org.cqc.NominatedIndividualId">
+            <key-property name="providerId" type="string">
+                <column name="provider_id" length="30" />
+            </key-property>
+            <key-property name="locationId" type="string">
+                <column name="location_id" length="30" />
+            </key-property>
+            <key-property name="regulatedActivityId" type="string">
+                <column name="regulated_activity_id" length="30" />
+            </key-property>
+        </composite-id>
+        <property name="nominatedIndividual" type="string">
+            <column name="nominated_individual" />
+        </property>
+        <property name="hashvalue" type="string">
+            <column name="hashvalue" length="32" />
+        </property>
+        <property name="action" type="java.lang.Character">
+            <column name="action" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

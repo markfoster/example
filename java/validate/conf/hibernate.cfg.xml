@@ -6,7 +6,7 @@
     <session-factory>
         
         <!-- Database authorisation/connection settings -->
-        <property name="connection.url">jdbc:mysql://localhost:3306/etl</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/preview_delta</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
 

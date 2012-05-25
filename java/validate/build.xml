@@ -48,6 +48,7 @@
         <java classname="parse" fork="true">
         <!-- <java classname="DBTest" fork="true"> -->
         <classpath path="build"/>
+        <classpath path="hbm"/>
 	<classpath>
             <path refid="classpath" />
         </classpath>
@@ -64,48 +65,60 @@
         </java>
     </target>
 
-<target name="schemaexport" description="Export schema to DDL file" depends="build">
+<target name="gen-java" description="Generate Java files from schema" depends="build">
   <!-- task definition; project.class.path contains all necessary libs -->
   <taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask">
     <classpath>
        <fileset dir="lib">
-          <include name="**/*.jar" />
+	  <include name="**/*.jar" />
        </fileset>
     </classpath>
   </taskdef>
-
-  <hibernatetool destdir="export/db"> <!-- check that directory exists -->
-<classpath>
-  <path location="hbm"/>
-       <fileset dir="lib">
-          <include name="**/*.jar" />
-       </fileset>
- </classpath>
-
-    <!-- <classpath path="build"/> -->
-<!--    <configuration configurationfile="conf/hibernate.cfg.xml" /> -->
-<jdbcconfiguration 
+  <hibernatetool destdir="src"> <!-- check that directory exists -->
+	<classpath>
+	  <path location="hbm"/>
+	       <fileset dir="lib">
+		  <include name="**/*.jar" />
+	       </fileset>
+	 </classpath>
+	<jdbcconfiguration
             configurationfile="conf/hibernate.cfg.xml"
             revengfile="conf/hibernate.reveng.xml"
             detectmanytomany="true">
         </jdbcconfiguration>
-    <!-- <annotationconfiguration configurationfile="conf/hibernate.cfg.xml"/> -->
-<!--
-     <fileset dir="build">
-       <include name="**/*.hbm.xml"/>
-     </fileset>
-    </configuration>
-    <hbm2ddl outputfilename="schemaexport.sql" format="true" export="false" drop="true" />
     <hbm2java jdk5="true" />
--->
-    <hbm2java jdk5="true" />
-    <hbm2hbmxml/>
   </hibernatetool>
 </target>
 
+<!--
+<target name="gen-hbm" description="Generate HBM files from schema" depends="build">
+  <taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask">
+    <classpath>
+       <fileset dir="lib">
+	  <include name="**/*.jar" />
+       </fileset>
+    </classpath>
+  </taskdef>
+  <hibernatetool destdir="export/hbm">
+	<classpath>
+	  <path location="hbm"/>
+	       <fileset dir="lib">
+		  <include name="**/*.jar" />
+	       </fileset>
+	 </classpath>
+	<jdbcconfiguration
+            configurationfile="conf/hibernate.cfg.xml"
+            revengfile="conf/hibernate.reveng.xml"
+            detectmanytomany="true">
+        </jdbcconfiguration>
+    <hbm2hbmxml/>
+  </hibernatetool>
+</target>
+-->
+
 <target name="download-jars">
     <ivy:retrieve/>
-  </target>
+</target>
 
 <target name="genxml">
   <taskdef name="xmlbean" classname="org.apache.xmlbeans.impl.tool.XMLBean">

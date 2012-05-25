@@ -41,6 +41,7 @@ public class parse {
 
         public static void main(String[] arg) throws IOException {
 
+                HibernateUtil.buildSessionFactory();
                 System.out.println("Hello");
                 parse p = new parse();
 
@@ -79,7 +80,8 @@ public class parse {
                            docs.put(key, doc);
                            p.checkXSD(xsd);
                            p.validateXML(xml, xsd);
-			   p.validateActions(xml, (Map)audits.get(key));
+			   p.validateActions(key, xml, (Map)audits.get(key));
+			   p.loadXML(doc, key);
 			   //p.checkData(doc, (Map)audits.get(key));
 		       } catch (Exception ex) {
 			   System.out.println("Invalid XML: " + ex.getMessage());
@@ -92,7 +94,7 @@ public class parse {
 		int updates = Integer.parseInt("1");
                 System.out.println("Updates = " + updates);
 
-                HibernateUtil.buildSessionFactory();
+                //HibernateUtil.buildSessionFactory();
 		//p.saveProviders();
 		//p.saveOutcomes();
                 //p.readGeocodes();
@@ -162,19 +164,64 @@ public class parse {
 		}
 	}
 
-   	public boolean validateActions(String xml, Map actions) {
+   	public boolean validateActions(String entity, String xml, Map actions) {
+		System.out.println("Validating Actions for " + entity);
 		System.out.println("Passed map = " + actions);
                 Document doc = null;
+
+		int iDelete = 0, iUpdate = 0, iInsert = 0;
+
                 try {
 			SAXReader sax = new SAXReader();
 			doc = sax.read(new StringReader(xml));
-			List list = doc.selectNodes("//Provider/Action_Code");
+			List list = doc.selectNodes("//" + entity + "/Action_Code");
 			System.out.println(list);
 			for (Iterator iter = list.iterator(); iter.hasNext(); ) {
             	             Element e = (Element)iter.next();
             		     String action = e.getText();
+                             if (action.equals("I")) iInsert++;
+                             if (action.equals("U")) iUpdate++;
+                             if (action.equals("D")) iDelete++;
                              logger.info("action  = " + action);
         		}
+                        int cInsert = 0, cDelete = 0, cUpdate = 0;
+                        cInsert = Integer.parseInt((String)actions.get("inserts"));
+                        cUpdate = Integer.parseInt((String)actions.get("updates"));
+                        cDelete = Integer.parseInt((String)actions.get("deletes"));
+                         
+                        if (iInsert != cInsert) System.out.println("Mis-match in Inserts");
+                        if (iUpdate != cUpdate) System.out.println("Mis-match in Updates");
+                        if (iDelete != cDelete) System.out.println("Mis-match in Deletes");
+
+                        return false;
+                } catch (Exception e) {
+                        logger.error("Error", e);
+                        return false;
+                }
+        }
+
+       public boolean loadXML(String xml, String entity) {
+                System.out.println("Loading XML " + entity);
+                Document doc = null;
+                try {
+                        SAXReader sax = new SAXReader();
+                        doc = sax.read(new StringReader(xml));
+                        return loadXML(doc, xml);
+                } catch (Exception e) {
+                        logger.error("Error", e);
+                        return false;
+                }
+       }
+
+       public boolean loadXML(Document doc, String entity) {
+                System.out.println("Loading XML " + entity);
+                try {
+                        List list = doc.selectNodes("//" + entity);
+                        for (Iterator iter = list.iterator(); iter.hasNext(); ) {
+                             Object e = iter.next();
+                             System.out.println(e);
+                             //HibernateUtil.currentSession().save(entity, e);
+                        }
                         return false;
                 } catch (Exception e) {
                         logger.error("Error", e);
@@ -228,19 +275,13 @@ public class parse {
 	public Document checkXML(String xml) throws Exception {
 		logger.info("in checkXML()");
                 Document doc = null;
-/***
-		try {
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder builder = factory.newDocumentBuilder();
-			doc = builder.parse(new InputSource(new StringReader(xml)));
-			logger.info(" -> doc = " + doc);
-		} catch (Exception e) {
-			logger.error("Error", e);
-                        throw new Exception(e.getMessage());
-		}
-		logger.info("The XML is Well Formed");
-                return doc;
-***/
+                try {
+                        SAXReader sax = new SAXReader();
+                        doc = sax.read(new StringReader(xml));
+                } catch (Exception e) {
+                        logger.error("Error", e);
+                        return null;
+                }
                 return doc;
 	}
 
@@ -255,6 +296,11 @@ public class parse {
 		}
 		return null;
 	}
+
+        public void dumpXMLNode(Element e) {
+                logger.info("Dumping element...");
+                org.hibernate.util.XMLHelper.dump(e);
+        }
 
         public String validateXML(String xml, String xsd) throws Exception {
  		logger.info("in validateXML()");

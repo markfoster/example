@@ -52,6 +52,8 @@
 
         <dependency org="org.apache.xmlbeans" name="xmlbeans"
            rev="2.4.0"/>
-<dependency org="jtidy" name="jtidy" rev="4aug2000r7-dev"/>
+	<dependency org="jtidy" name="jtidy" rev="4aug2000r7-dev"/>
+	<dependency org="cglib" name="cglib" rev="2.2"/>
+	<dependency org="asm" name="asm-commons" rev="3.1"/>
     </dependencies>
 </ivy-module>

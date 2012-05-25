@@ -1,5 +1,5 @@
 <Audit>
-  <Provider inserts="0" updates="0" deletes="0" load="delta"/>
+  <Provider inserts="4" updates="0" deletes="2" load="delta"/>
   <Provider_Regulated_Activity inserts="0" updates="0" deletes="0" load="delta"/>
   <Provider_Condition inserts="0" updates="0" deletes="0" load="delta"/>
   <Nominated_Individual inserts="0" updates="0" deletes="0" load="delta"/>
